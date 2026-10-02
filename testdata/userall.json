@@ -1,0 +1,38 @@
+[
+ {
+        
+  "id":"1", 
+  "username":"admin1212@email.com",
+  "password":"admin@123",
+  "message":"USER Email Doesn't Exist"
+
+  }, 
+
+  {
+        
+  "id":"2",
+  "username":"admin@email.com",
+  "password":"",
+  "message":"Password is required"
+
+  }, 
+
+  {
+        
+  "id":"3",
+  "username":"",
+  "password":"admin@123",
+  "message":"Email is required"
+
+  },
+    
+  {
+        
+  "id":"4",
+  "username":"",
+  "password":"",
+  "message":"Email and Password is required"
+
+  }
+
+]

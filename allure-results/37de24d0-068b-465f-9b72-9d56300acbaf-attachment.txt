@@ -1,0 +1,16 @@
+inside loginpage fixture
+inside Dashboard fixture
+**** type performed with value admin@email.com****
+**** type performed with value admin@123****
+**** click performed with value async click(selector) {
+    await selector.click();
+    console.log(`**** click performed with value ${this.click}****`);
+  }****
+**** click performed with value async click(selector) {
+    await selector.click();
+    console.log(`**** click performed with value ${this.click}****`);
+  }****
+**** click performed with value async click(selector) {
+    await selector.click();
+    console.log(`**** click performed with value ${this.click}****`);
+  }****

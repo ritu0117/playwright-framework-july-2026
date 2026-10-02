@@ -1,0 +1,116 @@
+/*framwork-part-2-parameteriser test data- Data driven Test
+
+->>first load the json file(array have multiple data) so we will put run the for loop the start excuting these records one by one so same test will be run with muliple test data
+  ex.test(fname,lname,email)
+  >number of record= number of test
+  >number of fields= number of parameter
+
+   note : same rules for csv , excel,ymal,json(not external library need to load this)
+  in spec file load json file throuth xyz object : import xyx from ''../../testdata/user.json
+
+*/
+
+/*framwork-part-3-Allure report+description
+>>allure report is java reporting library
+search for allure reporting for playwright- https://allurereport.org/docs/v2/install-for-windows/  (make sure java ,node.js, installe): run this command in terminal : scoop install allure
+
+also run this command : npm install --save-dev allure-playwright
+
+onces installed : in packgage.json : dependencies - allure also add as dependencies  automaticaly in package.json file
+
+ now go to playwright.config file- reporter: [['html'],['allure-playwright']],
+
+  now start run our test: npx playwright test
+  report will be save in allure-results
+  in- order to generate the  report we have run  the command :: allure generate( save into allure report directory) , allure serve
+
+run: npx playwright test->allure generate(allure-report->index.html->reveal in file explore- if direcly try to open will get 500 error in html page so)-> run command allure open
+    note : if no data showing(Delete/overwrite the existing allure-report contents and generate a fresh report.) to run this command allure generate allure-results --clean
+
+    or allure generate allure-results --clean allure-report
+
+    do some changes in report so -> pw.config file->use: trace: "retain-on-failure",
+    screenshot:"only-on-failure",
+    video:"retain-on-failure",
+
+
+     Final Run-->npx playwright test->open new terminal->allure generate allure-results --clean allure-report ->allure open 
+
+      in allure report open-> suites->open files-> screenshots and video will be there
+      later on will be pulish in ci/cd
+
+       also will delete playwright-report and test-result delete from my folder as we dont needed
+
+description>> one u have more and more test so we need to undestand the grouping and add the tags
+    test.describe("Login test",{tags:['smoke','login']},()=>{
+
+      test...
+    })
+
+ >>framwork-part-4- Create own fixture : page fixture help to open the browser
+     fixture have multiple number of advantage over before/after hooks
+      buit in fixture are : page , browser,context,browsername,request
+
+    base.extend
+     created obeject will be keep in fixture ( ex : const login page=new Loginpage(page))
+    the will be start consuming from fixture files into ur test case 
+    
+     Anything related to setup and teardown(use- close browser, close page) will be mention inside the fixture file
+     
+     >> creating custome fixture->resuablity purpose(set it once, use it everywhere, write clearner ,faster and more maintainble test)
+      >fixture.js-> ex ->will create the object of the class/pages  and help to naviage to browser ,use(pass object varible) , from diff diff class/pages ,  test data also we can take here
+        what playwright say:u test (spec) should only be focus on the funacationly why unessary to metion in spect file so will use it in fixture
+      > some time base file and fixture look same( fixture->gerenating the page, custome code and basefile-generic methods like click ) , use the same fixture across multiple specs file
+
+      >fixture and hooks are differnt and multiple fixture  can be create
+
+      test/base.extend({
+
+    inside this can we have multiple fixture
+});
+
+
+     > Basepage.js ->  common method and utilities for all pages like click in( home page, loginpage, dashbord page, profile page, payments)
+       if want to update custume login changes to we have to do it every page right so keep the action in basepage
+      so generate action will keep in base page( like- click,gettext,navigate,takescreenshort,waitfor element,isvisible , goback , go forward, upload file, dowpdown,etc..)
+     advantage: resusabiliy, maintainability, cleaner page classes(page class focus only on page specific loactor, action), consistency,less duplication, easier collaboration, scalable framwork
+ 
+ 
+   >> 80 -90- task done by playwright MCP,playwright CLI
+ 
+ 1.create page
+    maintain locator
+    create action
+
+2. create test data
+    json
+
+3.create test use pages,testdata
+   use test.describe
+
+4. execute and generate allure report
+
+-----------------------
+Collabration-pushing framwork to github
+version control system(VCS) also known as source control system ,devlopers manage changes to source code over time , it allows devlopers to track changes to the code, collabration on devlopment and maintain a history of all changes made to the codebase
+
+diagram:
+ codebase( c1->c2)=> collaboration ( C4) ->feature brance => history(c3)
+
+  DVCS-distributed version control system gives every devloper a full local copy of the codebase and history
+  central repository --> Dev1( pull & merge(receive update)(full local copy) +push(share changes-> Central repositort)) ,, dev2,, dev3...
+
+Git command : git init,git add,git commit,git clone, git pull, git push, get branch ,get checkout, git merge,git status,git log
+
+ Github : git hosting(hosting for git repositories) , team collaboration, integrated managements(tracking issues,manages bugs,pull requests, merge changes into main codebase)
+
+ github account : github.com: ritus01.work@gmail.com /Ritu@0118
+ install git : git-scm.com
+
+local-> .git->statge->commit->push->github(code in github repositories(can public provate))- clone &start using it 
+
+git init-> create empty repository( in VS terminal) , u means statge, a adde
+git add file_name : this file added to the stage area and git can start tracking
+git status -> to check the status
+git add. -> every single file added
+*/
