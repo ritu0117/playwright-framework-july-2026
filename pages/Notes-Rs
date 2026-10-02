@@ -113,4 +113,27 @@ git init-> create empty repository( in VS terminal) , u means statge, a adde
 git add file_name : this file added to the stage area and git can start tracking
 git status -> to check the status
 git add. -> every single file added
+
+commit-> what we did its final changes
+note : or  in vs code->source control- commit->commit , commit amend,commit &push, commit & sync
+
+git commit -m "message"
+ 
+ note : every commit will get the commit id that will use to revert or changes
+ git log -> show the commit id 
+
+ git branch -m main   -.( this command change branch master to maintain) use main branch dont use master branch
+git remote add origin https://github.com/ritu0117/playwright-framework-july-2026.git
+
+
+ local -> local git (files statging- commit) -> github
+  how our git know  i want to push this code to github
+git remote add origin https://github.com/ritu0117/playwright-framework-july-2026.git
+ note ; here jus making the connection not pushing the changes
+
+git push -u origin main
+ note ; pushing all the changes -u means upstream
+
+ --
+ again add new test case -> git add ., git commit -m "addting a new testcase Register" ,git push  ( add +commit+push)  ( note :  git push not required to add "u origin main" every time)
 */
