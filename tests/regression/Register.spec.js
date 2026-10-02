@@ -7,3 +7,11 @@ test('Register page should load correctly',async({page}) =>{
 
 
 });
+
+test('register New user with unique email',async({page}) =>{
+
+    await page.goto('https://example.com/register')
+    await expect(page).toHaveTitle(/Register/);
+
+
+});
