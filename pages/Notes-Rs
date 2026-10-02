@@ -136,4 +136,60 @@ git push -u origin main
 
  --
  again add new test case -> git add ., git commit -m "addting a new testcase Register" ,git push  ( add +commit+push)  ( note :  git push not required to add "u origin main" every time)
+
+--
+ now do some change in git hun any spec file or any dev push change we want to pull latest changes then ->
+ git pull
+
+  Note : if will get(please enter commit messge) the INSERT in terminal -> press i from keybord-> INSERT mode on->write messge getting new test from register.spec.s-> now come out from this ->press skip ; w q enter
+
+
+--------------
+git hub branching
+
+project:start from scratch
+create repo
+push changes
+private->member have access
+public->anyone can see but they can not make changes until they have acess
+
+clone- dowload the repo in local system like git clone https://github.com/ritu0117/playwright-framework-july-2026.git
+forking( for open source projects)- its will add that repo in your account like langchain github repo -> open link(or clone repo or downloadzip)->fork->create copy of this repo it its will come under my github user(copy the master branch)-create fork
+
+ if project have already repo: want to contribute
+  1.clone the repo(and while cloning cheking which branch have latest code mostly main branch  or master branch )
+  2. create a new branch(own branch)
+  3. make your changes can be edit , delete or add new file
+  4. add , commit
+  5.push your branch(publish) untill u dont puch it will not reflect in git hub
+  6.PR :create the pull request( ask a reviewer, these are the changes i need before consuming these i want someone to review this) , the movement i see the PULL request main branch pull ur latest changes and merge
+  7.get the review
+  8.merge into main branch or master branch
+  9. once done finally that branch deleted from remote/github
+  10.delete from local
+
+  admin/archtic, lead
+    rulesset
+       1. no one changes main directly
+       2. every changes should come throuth PR
+       3. every pull request (PR ) should have one or 2 reviewer
+
+       ex: main branch having 4 files( dev1 create 2 more file in own branch , raise pr , review done  then merge to main branch total become 6) ,( dev2 create 5 more file in own branch , raise pr , review done  then merge to main branch total become 11)
+    
+challenges come: happy senarios got merge ( main branch , person crete own branch(firstly get the latest changes))  
+merge conflact(mc): git not able to deside which changes should keep
+  note : want to open code in the browser : github1s.com :  add 1s , we can only view
+
+  
+  few check : git pull : already upto date , check current branch git branch  , now we want our sprate branch in order to continioue
+   check new branch and automaticcl swith to new branch  : git checkout -b "add_a_new_testcase_for_adding_course"
+
+     switch over git checkout main
+    note : if new branch add 2 new files ( readmd, skill.md into new own branch) ,git add .  , git commit -m " added new file" then if try to git pull will get  error  so direcly can not puch 
+     git push --set-upstream origin add_a_new_testcase_for_adding_course
+  
+  ruleset : if u r the owner github-setting
+
+
+
 */
